@@ -15,7 +15,9 @@
   <div ui-layout-container size="50%" class="query-editor-container">
     <div ui-layout="{flow: 'column'}">
       <div ui-layout-container size="50%" ui-ace="{ useWrapMode: true, showGutter: true, theme: 'twilight', onLoad: aceLoaded }"></div>
-      <div ui-layout-container size="50%"></div>
+      <div ui-layout-container size="50%">
+        <div class="ontology-container" ontology></div>
+      </div>
     </div>
   </div>
   <div class="grid-container" ui-layout-container size="50%">

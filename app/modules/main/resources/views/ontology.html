@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default">
+  <ul class="navbar-nav nav">
+    <li>
+      <form class="navbar-form">
+        <div class="form-group">
+          <select class="form-control">
+            <option id="ontology-select" ng-repeat="ontology in ontologies">{{ ontology }}</option>
+          </select>
+        </div>
+      </form>
+    </li>
+    <li><a href="#" ng-click="loadOntology()"><span class="glyphicon glyphicon-globe"></span> Load</a></li>
+  </ul>
+</nav>
+
+<div class="ontology-grid-container">
+  <div ui-grid="ontologyData" class="grid"></div>
+</div>

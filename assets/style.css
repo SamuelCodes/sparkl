@@ -478,10 +478,12 @@ div#home-page {
   margin: 0;
 }
 
+/*
+ * Query Editor Styles
+ */
 #toolbar {
   border-bottom: 1px solid #ccc;
 }
-
 .ide {
   height: 100%;
   position: relative;
@@ -503,9 +505,7 @@ div#home-page {
   display: block;
   min-height: 300px;
 }
-
 .ace_editor { height: 100%; }
-
 .glyphicon-chevron-left,
 .glyphicon-chevron-right,
 .glyphicon-chevron-up,
@@ -513,5 +513,13 @@ div#home-page {
     color: #aaa;
 }
 .ui-splitbar { background-color: #eee; outline: 1px solid #ccc; }
-
 .navbar { margin-bottom: 0; }
+
+
+/*
+ * Ontology Browser Styles
+ */
+.ontology-grid-container {
+  position:relative;
+  height: 100%;
+}
