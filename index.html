@@ -1,27 +1,16 @@
 <html>
 <head>
-    <title>JS dev tests</title>
+    <title>Sparkl - Structured Data IDE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/build/vendor.css"/>
     <link rel="stylesheet" href="/assets/style.css"/>
     <script>
         window.ENV = 'dev';
     </script>
 </head>
 <body>
-    <div id="my-app">
-
-        <div id="loaders">
-            <div id="application-spinner" ng-show="spinner">
-                Loading
-            </div>
-        </div>
-
-        <ul>
-            <li><a href="/">Go to home, you are drunk</a></li>
-            <li><a href="/foo/hello">Go to foo</a></li>
-            <li><a href="/bar/beer">Go to bar!!1</a></li>
-        </ul>
-
-        <div ng-view></div>
+    <div id="sparkl">
+      <div ng-view></div>
     </div>
     <script>
         function _addScript(src, main){
@@ -37,9 +26,9 @@
         }
 
         if (window.ENV == 'dev'){
-            _addScript('bower_components/requirejs/require.js', 'app/boot');
+            _addScript('lib/requirejs/require.js', 'app/boot');
         } else if (window.ENV == 'prod'){
-            _addScript('bower_components/requirejs/require.js');
+            _addScript('lib/requirejs/require.js');
             _addScript('build/vendors.js');
             _addScript('build/app.js');
         }

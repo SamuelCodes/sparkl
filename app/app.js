@@ -1,16 +1,14 @@
 define(function(require) {
 
-  require('modules/foo/foo-includes');
-  require('modules/bar/bar-includes');
   require('modules/application/application-includes');
+  require('modules/main/main-includes');
 
   var ng = require('angular');
 
-  var name = 'my-app';
+  var name = 'sparkl';
   var app = ng.module(name, [
     'application',
-    'foo',
-    'bar'
+    'main'
   ]);
 
   ng.element(document)

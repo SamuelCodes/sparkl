@@ -2,14 +2,24 @@ module.exports = function(grunt) {
 
   var vendors = {
     list: [
+      'bootstrap',
       'angular-route',
       'requirejs',
-      'requirejs-text'
+      'requirejs-text',
+      'jquery',
+      'angular-ui',
+      'angular-ui-ace',
+      'angular-ui-grid'
     ],
     paths: {
-      'requirejs': '../bower_components/requirejs/require',
-      'requirejs-text': '../bower_components/requirejs-text/text'
-    }
+      'bootstrap': '../lib/bootstrap/bootstrap',
+      'requirejs': '../lib/requirejs/require',
+      'requirejs-text': '../lib/requirejs-text/text',
+      'jquery': '../lib/jquery/jquery',
+      'angular-ui': '../lib/angular-ui/build/angular-ui',
+      'angular-ui-ace': '../lib/angular-ui-ace/ui-ace',
+      'angular-ui-grid': '../lib/angular-ui-grid/ui-grid'
+    },
   };
 
   var applicationBootScript = './app/boot.js';
@@ -29,6 +39,29 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    bower: {
+      install: {
+        options: {
+          cleanTargetDir: false,
+          cleanBowerDir: false,
+        }
+      }
+    },
+    copy: {
+      main: {
+        files: [
+          {expand: true, src: [ 'lib/bootstrap/*.ttf', 'lib/bootstrap/*.woff*' ], dest: 'fonts', flatten: true},
+          {expand: true, src: [ 'lib/angular-ui-grid/*.ttf', 'lib/angular-ui-grid/*.woff*' ], dest: 'build', flatten: true},
+          {expand: true, src: [ 'bower_components/dist/css/*.map' ], dest: 'build', flatten: true}
+        ]
+      }
+    },
+    concat: {
+      build: {
+        dest: 'build/vendor.css',
+        src: [ 'bower_components/**/*.css' ]
+      }
+    },
     requirejs: {
       vendors: {
         options: {
@@ -64,7 +97,9 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-bower-task');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
-  grunt.registerTask('default', ['requirejs:app', 'requirejs:vendors']);
-
+  grunt.registerTask('default', ['bower', 'requirejs:app', 'requirejs:vendors', 'concat', 'copy']);
 };

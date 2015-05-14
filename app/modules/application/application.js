@@ -7,11 +7,11 @@
  * in any other module. This module should not include controllers.
  */
 define(function(require) {
-  var ng = require('angular');
+  var angular = require('angular');
 
   require('angular-route');
 
-  var module = ng.module('application', [
+  var module = angular.module('application', [
     'ngRoute'
   ]);
 

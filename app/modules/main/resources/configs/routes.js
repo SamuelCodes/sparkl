@@ -7,13 +7,13 @@ define(function(require) {
       '$routeProvider',
       function($routeProvider) {
 
-
-        $routeProvider.when('/bar/beer', {
-          template: require('template!beer'),
-          controller: 'bar.controllers.beer',
+        $routeProvider.when('/', {
+          template: require('template!main'),
+          controller: 'main.controllers.main',
           resolve: {
           }
         });
+
       }
     ]);
   }

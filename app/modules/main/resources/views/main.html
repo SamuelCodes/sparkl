@@ -1,0 +1,24 @@
+<nav role="navigation" class="navbar navbar-default">
+  <ul class="navbar-nav nav">
+    <li>
+      <form class="inline-form navbar-form">
+        <select id="endpoint" class="form-control">
+          <option ng-repeat="e in endpoints">{{ e }}</option>
+        </select>
+      </form>
+    </li>
+    <li><a href="" ng-click="run()" id="run"><span class="glyphicon glyphicon-play"></span> Run</a></li>
+  </ul>
+</nav>
+
+<div ui-layout="{flow: 'row'}" class="ide">
+  <div ui-layout-container size="50%" class="query-editor-container">
+    <div ui-layout="{flow: 'column'}">
+      <div ui-layout-container size="50%" ui-ace="{ useWrapMode: true, showGutter: true, theme: 'twilight', onLoad: aceLoaded }"></div>
+      <div ui-layout-container size="50%"></div>
+    </div>
+  </div>
+  <div class="grid-container" ui-layout-container size="50%">
+    <div ui-grid="outputData" class="grid" ></div>
+  </div>
+</div>

@@ -10,6 +10,7 @@ html {
     font-family: sans-serif; /* 1 */
     -ms-text-size-adjust: 100%; /* 2 */
     -webkit-text-size-adjust: 100%; /* 2 */
+    height: 100%;
 }
 
 /**
@@ -18,6 +19,11 @@ html {
 
 body {
     margin: 0;
+    height: 100%;
+}
+
+body > div.ng-scope, body > div.ng-scope > div.ng-scope {
+  height: 100%;
 }
 
 /* HTML5 display definitions
@@ -467,3 +473,45 @@ div#hello-page {
 div#home-page {
     color:#6eac2c;
 }
+
+.nav-pills.nav {
+  margin: 0;
+}
+
+#toolbar {
+  border-bottom: 1px solid #ccc;
+}
+
+.ide {
+  height: 100%;
+  position: relative;
+}
+.ui-grid-header-viewport {
+  height: 30px;
+}
+.grid-container {
+  display: relative;
+  height: 100%;
+}
+.grid {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+.query-editor-container {
+  display: block;
+  min-height: 300px;
+}
+
+.ace_editor { height: 100%; }
+
+.glyphicon-chevron-left,
+.glyphicon-chevron-right,
+.glyphicon-chevron-up,
+.glyphicon-chevron-down{
+    color: #aaa;
+}
+.ui-splitbar { background-color: #eee; outline: 1px solid #ccc; }
+
+.navbar { margin-bottom: 0; }
