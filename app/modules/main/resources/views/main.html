@@ -12,9 +12,9 @@
 </nav>
 
 <div ui-layout="{flow: 'row'}" class="ide">
-  <div ui-layout-container size="50%" class="query-editor-container">
+  <div ui-layout-container size="50%" class="sparql-tools-container">
     <div ui-layout="{flow: 'column'}">
-      <div ui-layout-container size="50%" ui-ace="{ useWrapMode: true, showGutter: true, theme: 'twilight', onLoad: aceLoaded }"></div>
+      <div ui-layout-container size="50%" query-editor class="query-editor-container"></div>
       <div ui-layout-container size="50%">
         <div class="ontology-container" ontology></div>
       </div>
